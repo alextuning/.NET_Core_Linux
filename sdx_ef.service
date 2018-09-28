@@ -1,0 +1,15 @@
+[Unit]
+Description=my_app1
+Requires=network.target
+After=network.target
+
+[Service]
+Type=simple
+User=my_app1
+WorkingDirectory=/opt/apps/my_app1
+ExecStart=/opt/dotnet/dotnet /opt/sodexo/my_app1/my_app1.Front.dll
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
